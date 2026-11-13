@@ -43,7 +43,7 @@ export default function Index({ games }: { games: Game[] }) {
         game.title.toLowerCase().includes(search.trim().toLowerCase()),
     );
     // TODO 3: tel alle uitgespeelde games, onafhankelijk van de zoektekst.
-    const completedCount = 0;
+    const completedCount = games.filter((game) => game.completed).length;
 
     function submit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
