@@ -92,16 +92,17 @@ export default function Index({ games }: { games: Game[] }) {
                 <div className="gb-list-heading">
                     <h2>Mijn games</h2>
                     <label>Zoek op titel
-    <input value={search} placeholder="Zoek een game..."
-        onChange={(e) => setSearch(e.target.value)} />
-</label>
-<button
-    type="button"
-    className="gb-secondary"
-    onClick={() => setSearch('')}
->
-    Wis zoeken
-</button>
+                        <p>Zichtbaar: {visibleGames.length} van {games.length}</p>
+                        <input value={search} placeholder="Zoek een game..."
+                        onChange={(e) => setSearch(e.target.value)} />
+                    </label>
+                    <button
+                        type="button"
+                        className="gb-secondary"
+                        onClick={() => setSearch('')}
+                    >
+                        Wis zoeken
+                    </button>
                 </div>
                 {games.length === 0 ? (
                     <p className="gb-empty">Je lijst is leeg. Voeg je eerste game toe.</p>
